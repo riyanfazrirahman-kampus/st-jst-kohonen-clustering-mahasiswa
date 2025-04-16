@@ -1,8 +1,8 @@
-# 🧠 Clustering Mahasiswa Berdasarkan Nilai Menggunakan Self-Organizing Map (SOM)
+# 🧠 Clustering Mahasiswa Berdasarkan Nilai Menggunakan Metode Kohonen
 
 ## 📚 Deskripsi Proyek
 
-Aplikasi ini digunakan untuk mengelompokkan mahasiswa berdasarkan nilai atau data numerik lain menggunakan metode Self-Organizing Map (SOM). Proyek ini dibangun dengan Streamlit untuk antarmuka web interaktif, serta memanfaatkan library seperti Pandas dan Numpy.
+Aplikasi ini digunakan untuk mengelompokkan mahasiswa berdasarkan nilai atau data numerik lain menggunakan metode Kohonen. Proyek ini dibangun dengan Streamlit untuk antarmuka web interaktif, serta memanfaatkan library seperti Pandas dan Numpy.
 
 Pengguna cukup mengupload file CSV yang berisi data numerik mahasiswa (misalnya nilai X1, X2, X3...), memilih kolom fitur, lalu sistem akan menormalkan data, melatih model SOM, dan menetapkan masing-masing mahasiswa ke dalam klaster tertentu.
 
@@ -18,7 +18,7 @@ Pengguna cukup mengupload file CSV yang berisi data numerik mahasiswa (misalnya 
 
 ## 🧠 Metode yang Digunakan
 
-- Self-Organizing Map (SOM) diimplementasikan secara manual (tanpa library eksternal)
+- Kohonen diimplementasikan secara manual (tanpa library eksternal)
 - Normalisasi data numerik dengan normalisasi maksimum
 - Proses pelatihan bobot neuron dan penentuan klaster berdasarkan jarak Euclidean
 

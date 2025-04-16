@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 from pages.manual_hitung import tampilkan_perhitungan_manual
 
-st.title("🧠 Self Organizing Map (SOM) Clustering Mahasiswa")
-st.write("Upload data penilaian mahasiswa (format .csv) untuk dilakukan clustering dengan SOM.")
+st.title("🧠 Clustering Mahasiswa Berdasarkan Nilai Menggunakan Metode Kohonen")
+st.write("Upload data penilaian mahasiswa (format .csv) untuk dilakukan clustering dengan Self-Organizing Map (SOM).")
 
 st.session_state["html_som_manual"] = None  
 
