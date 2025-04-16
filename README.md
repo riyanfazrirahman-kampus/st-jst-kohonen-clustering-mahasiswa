@@ -1,10 +1,10 @@
-# Clustering Mahasiswa Berdasarkan Karakter & Minat Belajar Menggunakan Kohonen (SOM)
+# 🧠 Clustering Mahasiswa Berdasarkan Nilai Menggunakan Self-Organizing Map (SOM)
 
 ## 📚 Deskripsi Proyek
 
-Aplikasi ini digunakan untuk mengelompokkan mahasiswa berdasarkan karakter dan minat belajar mereka menggunakan metode **Self-Organizing Map (SOM)** dari jaringan syaraf tiruan Kohonen. Proyek ini dibangun menggunakan **Streamlit** untuk antarmuka web interaktif, serta memanfaatkan beberapa library populer seperti Pandas, Scikit-Learn, dan Plotly.
+Aplikasi ini digunakan untuk mengelompokkan mahasiswa berdasarkan nilai atau data numerik lain menggunakan metode Self-Organizing Map (SOM). Proyek ini dibangun dengan Streamlit untuk antarmuka web interaktif, serta memanfaatkan library seperti Pandas dan Numpy.
 
-Mahasiswa cukup menjawab beberapa pertanyaan Ya/Tidak terkait minat mereka dalam bidang tertentu, dan sistem akan melakukan normalisasi, pelatihan SOM, serta memetakan ke klaster tertentu.
+Pengguna cukup mengupload file CSV yang berisi data numerik mahasiswa (misalnya nilai X1, X2, X3...), memilih kolom fitur, lalu sistem akan menormalkan data, melatih model SOM, dan menetapkan masing-masing mahasiswa ke dalam klaster tertentu.
 
 ---
 
@@ -18,22 +18,27 @@ Mahasiswa cukup menjawab beberapa pertanyaan Ya/Tidak terkait minat mereka dalam
 
 ## 🧠 Metode yang Digunakan
 
-- **Self-Organizing Map (SOM)** dari library `MiniSom`
-- Normalisasi data menggunakan `MinMaxScaler` dari Scikit-Learn
-- Visualisasi distribusi dan peta klaster menggunakan `matplotlib` dan `plotly`
+- Self-Organizing Map (SOM) diimplementasikan secara manual (tanpa library eksternal)
+- Normalisasi data numerik dengan normalisasi maksimum
+- Proses pelatihan bobot neuron dan penentuan klaster berdasarkan jarak Euclidean
 
 ---
 
 ## 💻 Fitur Aplikasi
 
-- Input karakter mahasiswa berdasarkan pertanyaan Ya/Tidak
-- Visualisasi karakter sebagai donut chart
-- Training model SOM berdasarkan dataset CSV
-- Menampilkan posisi mahasiswa baru pada peta SOM
-- Menyimpan data ke file `dataset.csv` (nama, jawaban, klaster)
-- Tabel data semua mahasiswa + klasternya
-- Donut chart distribusi klaster mahasiswa
-- Tombol **simpan** & **refresh**
+- Upload file CSV yang berisi data mahasiswa
+- Pilih kolom-kolom numerik untuk dijadikan fitur SOM
+- Normalisasi otomatis terhadap data fitur
+- Proses pelatihan SOM berdasarkan parameter:
+  - Jumlah neuron (cluster)
+  - Learning rate
+  - Jumlah epoch
+- Menampilkan:
+  - Data asli
+  - Data setelah normalisasi
+  - Bobot awal dan akhir neuron
+  - Hasil klasterisasi akhir (dapat di-download)
+- Fitur tambahan: Tampilkan langkah-langkah perhitungan manual SOM
 
 ---
 
@@ -45,10 +50,6 @@ Berikut adalah dependensi utama yang digunakan:
 streamlit==1.32.0
 pandas==2.2.1
 numpy==1.26.4
-matplotlib==3.8.3
-scikit-learn==1.4.1
-plotly==5.20.0
-minisom==2.3.0
 ```
 
 > Semua dependensi ini sudah dituliskan di file `requirements.txt`. Anda bisa menginstall-nya dengan:
@@ -77,35 +78,19 @@ streamlit run app.py
 
 ```sh
 .
-├── app.py                # File utama Streamlit
-├── dataset.csv           # Dataset mahasiswa (akan dibuat otomatis)
-├── requirements.txt      # Daftar dependensi
 ├── pages/
 │   └── home.py           # Halaman utama aplikasi
-└── README.md             # Dokumentasi ini
+│   └── manual_hitung.py  # Fungsi perhitungan manual
+├── app.py                # File utama Streamlit
+├── README.md             # Dokumentasi ini
+└── requirements.txt      # Daftar dependensi
 ```
-
-## 📊 Contoh Pertanyaan Karakter Mahasiswa
-
-- Suka memecahkan masalah logika?
-
-- Suka menulis kode program?
-
-- Tertarik pada desain visual?
-
-- Tertarik membangun bisnis?
-
-- Senang berorganisasi?
-
-- Lebih suka praktik daripada teori?
 
 ## 🧾 Catatan Tambahan
 
-- Dataset akan otomatis diperbarui saat data baru disimpan
-
-- Model SOM dilatih ulang setiap kali aplikasi dijalankan
-
-- Untuk presentasi, pembahasan akan dijelaskan dalam file PPT terpisah
+- Proses pelatihan SOM ditulis manual.
+- Perhitungan manual sangat cocok untuk kebutuhan presentasi edukatif atau pembelajaran konsep SOM.
+- File CSV bebas, asalkan memuat kolom-kolom numerik.
 
 ## 👥 Kelompok 5 - Kecerdasan Buatan
 
